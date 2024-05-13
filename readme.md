@@ -79,6 +79,16 @@ protected $middlewareGroups = [
         \Backpack\LanguageSwitcher\Http\Middleware\LanguageSwitcherMiddleware::class,
     ],
 ```
+#### Update Laravel 11 
+In new laravel update your middelware register in `boostrap/app.php`
+```php
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->web(append: [
+            ...
+            \Backpack\LanguageSwitcher\Http\Middleware\LanguageSwitcherMiddleware::class,
+        ]);
+    })
+```
 
 ### Can I customize the endpoint routes ? 
 **Yes!**
